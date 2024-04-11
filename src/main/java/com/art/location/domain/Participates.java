@@ -1,9 +1,6 @@
 package com.art.location.domain;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Getter;
@@ -18,4 +15,12 @@ public class Participates {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "Actor_id")
+    private Actor actor;
+
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "art_id")
+    private Art art;
 }
