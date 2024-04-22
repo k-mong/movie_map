@@ -14,7 +14,7 @@ import java.util.List;
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
-public class Genre {
+public class Genre {    //장르
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

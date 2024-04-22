@@ -1,5 +1,6 @@
 package com.art.location.service;
 
+
 import com.art.location.domain.Art;
 import com.art.location.repository.ArtRepository;
 import lombok.RequiredArgsConstructor;
@@ -9,9 +10,15 @@ import org.springframework.stereotype.Service;
 
 import java.util.List;
 
+
+import lombok.RequiredArgsConstructor;
+import org.springframework.stereotype.Service;
+
+
 @Service
 @RequiredArgsConstructor
 public class ArtService {
+
 
     private final ArtRepository artRepository;
 
