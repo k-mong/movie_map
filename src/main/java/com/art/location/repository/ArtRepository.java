@@ -14,5 +14,5 @@ public interface ArtRepository extends JpaRepository<Art, Long> {
     List<Art> findByGenreGenreName(String genreName);
 
     // 장품명 검색
-    List<Art> findByName(String atrName);
+    List<Art> findByName(String artName);
 }
