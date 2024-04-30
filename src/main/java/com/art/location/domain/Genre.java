@@ -1,28 +1,31 @@
 package com.art.location.domain;
 
 import jakarta.persistence.*;
-import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
+import lombok.*;
 
 import java.util.ArrayList;
 import java.util.List;
 
 @Entity
-@Getter
-@Builder
-@NoArgsConstructor
 @AllArgsConstructor
-public class Genre {    //장르
-
+@NoArgsConstructor
+@Getter
+@Setter
+@Builder
+public class Genre {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "genre_id")
+    @Column(name = "Gen_id")
     private Long id;
 
     private String genreName;
 
-    @OneToMany(mappedBy = "genre", fetch = FetchType.LAZY, cascade = CascadeType.ALL)
+    @OneToMany(mappedBy = "genre", fetch = FetchType.LAZY)
     private List<Art> art = new ArrayList<>();
+
+    public static Genre createGenre(String genreName) {
+        Genre genre = new Genre();
+        genre.setGenreName(genreName);
+        return genre;
+    }
 }
